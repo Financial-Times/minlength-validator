@@ -1,0 +1,22 @@
+{
+  "name": "minlength-validator",
+  "version": "1.0.0",
+  "authors": [
+    "<omapplications@ft.com>"
+  ],
+  "main": "src/MinLengthValidator.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "license": "proprietary",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
