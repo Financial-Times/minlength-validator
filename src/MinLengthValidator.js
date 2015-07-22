@@ -16,20 +16,10 @@
     }
 
     function compile(el) {
-        var attrs = el.attributes;
-        var prefix = 'minlength-validator-';
-        var i = attrs.length;
-        var name;
-        var config;
-
-        while (i--) {
-            name = attrs[i].name;
-
-            if (name.indexOf(prefix) === 0) {
-                name = name.replace(prefix, '');
-                config[name] = attrs[i].value;
-            }
-        }
+        var config = {
+            minLength: el.getAttribute('minlength'),
+            message: el.getAttribute('minlength-validator-message')
+        };
 
         return new MinLengthValidator(el, config);
     }
@@ -47,7 +37,7 @@
     }
 
     MinLengthValidator.init = function(rootEl) {
-        var selector = '[minlength-validator-minlength]';
+        var selector = '[minlength]';
 
         if (rootEl.matches(selector)) {
             return compile(rootEl);
