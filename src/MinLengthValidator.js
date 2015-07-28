@@ -12,6 +12,8 @@
                 bubbles: false,
                 cancelable: true
             }));
+        } else {
+            this.el.setCustomValidity('');
         }
     }
 
