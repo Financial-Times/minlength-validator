@@ -29,8 +29,14 @@
             return new MinLengthValidator(el, config);
         }
 
+        var minlength = parseInt(config.minLength, 10);
+
+        if (isNaN(minlength)) {
+            minlength = 0;
+        }
+
         this.el = el;
-        this.minLength = config.minLength;
+        this.minLength = minlength;
         this.message = config.message;
 
         this.el.addEventListener('keyup', validate.bind(this));
